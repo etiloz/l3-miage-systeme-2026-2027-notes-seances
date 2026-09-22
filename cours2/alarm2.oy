@@ -1,0 +1,13 @@
+import os, time, signal, sys
+# coucou
+signal.alarm(5)  # déclenche un signal SIGALRM après 5 secondes
+
+def handle_sigalrm(signum, frame):
+    print("bye")
+    sys.exit(0)
+
+signal.signal(signal.SIGALRM, handle_sigalrm)
+
+while True:
+    print("tic")
+    time.sleep(1)
